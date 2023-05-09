@@ -14,7 +14,7 @@ Se debe **configurar** las variables de entorno que se muestan en el _.env.examp
 
 
 ## ¿Cómo se usa?
-
+MUY PRONTO
 
 ##Endpoints
 
