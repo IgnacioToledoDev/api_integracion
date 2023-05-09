@@ -1,4 +1,4 @@
-# api_integracion
+# CERTAMEN 2 INTEGRACION DE PLATAFORMAS
 
 #Requisitos
 - Node.js 18+
