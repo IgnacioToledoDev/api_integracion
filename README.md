@@ -13,9 +13,9 @@ For dependency installation, use the following code.
 You must **set** the environment variables that are displayed in the _.env.example_
 
 ### Enviroment variables examples
-- PORT= 4201
-- DB_URI=your_mongo:port/name_database
-- JWT_SECRET = something
+- `PORT`= 4201
+- `DB_URI`=your_mongo:port/name_database
+- `JWT_SECRET` = something
 
 
 ## How to use?
