@@ -1,6 +1,6 @@
 # CERTAMEN 2 INTEGRACION DE PLATAFORMAS
 
-#Requisitos
+## Requisitos
 - Node.js 18+
 - NPM
 
