@@ -1,20 +1,20 @@
 # CERTAMEN 2 INTEGRACION DE PLATAFORMAS
 
-## Requisitos
+## requirements
 - Node.js 18+
 - NPM
 
-## Instalacion
-Para la instalacion de las dependencia, utiliza el siguiente codigo.
+## Install
+For dependency installation, use the following code.
 ```bash
   npm install 
 ```
-## Configuracion
-Se debe **configurar** las variables de entorno que se muestan en el _.env.example_
+## Configuration
+You must **set** the environment variables that are displayed in the _.env.example_
 
 
 ## ¿Cómo se usa?
-MUY PRONTO
+In Comming
 
 ## Endpoints
 
