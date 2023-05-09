@@ -29,11 +29,15 @@ npm run dev
 
 ## Endpoints
 
+### Products
 - `GET` /api/v1/product
 - `GET` /api/v1/product/:id
 - `POST` /api/v1/product/:id
 - `PUT` /api/v1/product/:id
 - `DELETE` /api/v1/product/:id
+
+### Orders
+  - TODO
 
 ## CREATOR
 
