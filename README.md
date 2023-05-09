@@ -37,7 +37,11 @@ npm run dev
 - `DELETE` /api/v1/product/:id
 
 ### Orders
-  - TODO
+- `GET` /api/v1/order
+- `GET` /api/v1/order/:id
+- `POST` /api/v1/order/:id
+- `PUT` /api/v1/order/:id
+- `DELETE` /api/v1/order/:id
 
 ## CREATOR
 
