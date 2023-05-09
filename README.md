@@ -13,8 +13,14 @@ For dependency installation, use the following code.
 You must **set** the environment variables that are displayed in the _.env.example_
 
 
-## ¿Cómo se usa?
-In Comming
+## ¿How to use?
+
+### Development server
+Start the development server. The default port is 4200 but you can change the port on the _.env_ file
+
+```bash
+npm run dev
+```
 
 ## Endpoints
 
