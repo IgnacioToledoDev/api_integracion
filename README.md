@@ -32,16 +32,19 @@ npm run dev
 ### Products
 - `GET` /api/v1/product
 - `GET` /api/v1/product/:id
-- `POST` /api/v1/product/:id
+- `POST` /api/v1/product/
 - `PUT` /api/v1/product/:id
 - `DELETE` /api/v1/product/:id
 
 ### Orders
 - `GET` /api/v1/order
 - `GET` /api/v1/order/:id
-- `POST` /api/v1/order/:id
+- `POST` /api/v1/order/
 - `PUT` /api/v1/order/:id
 - `DELETE` /api/v1/order/:id
+
+### Users
+- todo
 
 ## CREATOR
 
