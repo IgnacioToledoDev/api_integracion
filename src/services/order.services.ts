@@ -4,7 +4,7 @@ import OrderModel from "../models/order.model";
 
 /**
  *
- *  @description create a model of Order
+ * @description create a model of Order
  * @param {Order} order
  * @return {Order | undefined} 
  */
