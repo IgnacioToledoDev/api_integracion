@@ -1,3 +1,4 @@
+import { WebpayPlus } from 'transbank-sdk';
 import { Order } from './../types/order.types';
 import OrderModel from "../models/order.model";
 
@@ -9,6 +10,10 @@ import OrderModel from "../models/order.model";
  */
 const insertOrder = async (order: Order) => {
     const response = await OrderModel.create(order);
+    const createTransaction = await (new WebpayPlus.Transaction()).create(
+        order,
+    );
+    console.log(createTransaction);
     return response;
 };
 
