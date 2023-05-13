@@ -44,8 +44,11 @@ npm run dev
 - `DELETE` /api/v1/order/:id
 
 ### Users
-- todo
+- `POST` /api/v1/auth/register ** REGISTER USER **
+- `POST` /api/v1/auth/login    ** LOGIN USER **
+- `GET`  /api/v1/users/        ** GET ALL USERS **
+
 
 ## CREATOR
 
-**Ignacio Toledo**
+** Ignacio Toledo **
