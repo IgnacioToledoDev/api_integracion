@@ -7,7 +7,7 @@
 ## Install
 For dependency installation, use the following code.
 ```bash
-  npm install 
+  npm install
 ```
 ## Configuration
 You must **set** the environment variables that are displayed in the _.env.example_
