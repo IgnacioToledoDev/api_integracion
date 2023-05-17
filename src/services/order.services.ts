@@ -1,6 +1,7 @@
-import { WebpayPlus } from 'transbank-sdk';
 import { Order } from './../types/order.types';
 import OrderModel from "../models/order.model";
+import mercadopago from "mercadopago"
+import { createPaymentMercadoPago, getAllPaymentMethodId } from './mercado_pago.services';
 
 /**
  *
@@ -8,12 +9,13 @@ import OrderModel from "../models/order.model";
  * @param {Order} order
  * @return {Order | undefined} 
  */
-const insertOrder = async (order: Order) => {
-    const response = await OrderModel.create(order);
-    const createTransaction = await (new WebpayPlus.Transaction()).create(
-        order,
-    );
-    console.log(createTransaction);
+const insertOrder = async (order: Order, email_user: string, payment: string, total_payment: number, installments: number) => {
+    const data = await OrderModel.create(order);
+    const createPayment = await createPaymentMercadoPago(email_user, payment, total_payment, installments, order.products);
+    const response = {
+        data,
+        createPayment
+    }
     return response;
 };
 
@@ -23,6 +25,7 @@ const insertOrder = async (order: Order) => {
  */
 const getAllOrders = async () => {
     const response = await OrderModel.find();
+    const methods = await getAllPaymentMethodId();
     return response;
 };
 

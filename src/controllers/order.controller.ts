@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { handleHttp } from "../utils/handlerHttp";
 import { deleteOrderByID, getAllOrders, getOrderByID, insertOrder, updateOrderByID } from "../services/order.services";
+import { urls } from "../utils/callbackUrl";
 
 /**
  * @description controller of get all orders
@@ -38,9 +39,12 @@ const getOrder = async ({ params }: Request, res: Response) => {
  * @param {Request} { body }
  * @param {Response} res
  */
-const postOrder = async ({ body }: Request, res: Response) => {
+const postOrder = async ({ body, headers }: Request, res: Response) => {
     try {
-        const response = await insertOrder(body);
+        const { price, user, order } = body;
+        const payment = 'webpay';
+        const response = await insertOrder(body, user.email, payment, price, 1);
+        console.log('test ', body);
         res.send(response);
     }
     catch (err) {

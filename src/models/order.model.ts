@@ -1,21 +1,23 @@
-import { Product } from '../types/product.type';
 import { Order } from './../types/order.types';
-import { Schema, Types, model } from "mongoose";
+import { Schema, SchemaTypeOptions, Types, model } from "mongoose";
 
 const OrderSchema = new Schema<Order>(
     {
-        date: {
-            type: Date,
+        price: {
+            type: Number,
+            required: true
+        },
+        installaments: {
+            type: Number,
             required: true
         },
         user: {
-            required: true,
-            type: Types.ObjectId,
-            ref: "User"
+            required: false,
+            type: Schema.Types.Mixed
         },
         products: {
             required: true,
-            type: [{ name: String, description: String, category: String, price: Number, stock: Number }]
+            type: [{ name: String, description: String, category: String, price: Number }]
         }
     },
     {

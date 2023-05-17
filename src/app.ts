@@ -18,8 +18,11 @@ db()
     .then(() => console.log('Connexion ready'))
     .catch((err) => console.log(`Oh a ocurrido un error ${err}`));
 
+/** MERCADO PAGO */
+
 /**App use */
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(router)
 
