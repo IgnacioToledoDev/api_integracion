@@ -44,9 +44,9 @@ npm run dev
 - `DELETE` /api/v1/order/:id
 
 ### USERS
-- `GET` /api/v1/auth/register **Register new user**
-- `GET` /api/v1/auth/login    **Login user**
-- `POST` /api/v1/user/        **Get all users**
+- `POST` /api/v1/auth/register **Register new user**
+- `POST` /api/v1/auth/login    **Login user**
+- `POST` /api/v1/user/         **Get all users**
 
 
 
