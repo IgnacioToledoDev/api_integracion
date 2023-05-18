@@ -1,8 +1,9 @@
 import { Types } from "mongoose";
 import { Product } from "./product.type";
+import { User } from "./user.type";
 
 export interface Order {
-    date: Date;
     products: Types.Array<Product>
-    user: object
+    user: User
+    price: number
 }

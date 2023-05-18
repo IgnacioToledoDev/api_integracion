@@ -4,14 +4,13 @@ import { Schema, Types, model } from "mongoose";
 
 const OrderSchema = new Schema<Order>(
     {
-        date: {
-            type: Date,
-            required: true
+        price: {
+            required: true,
+            type: Number
         },
         user: {
             required: true,
-            type: Types.ObjectId,
-            ref: "User"
+            type: Object,
         },
         products: {
             required: true,

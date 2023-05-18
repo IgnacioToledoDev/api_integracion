@@ -1,13 +1,49 @@
 import { Order } from './../types/order.types';
 import OrderModel from "../models/order.model";
+import dotenv from 'dotenv'
+import http from 'http';
+dotenv.config();
 
+const TRANSBANKURL = process.env.TRANSBANK_URL || undefined;
+
+const httpOptions = {
+    hostname: 'localhost',
+    PORT: 4500,
+    path: '/test',
+    method: 'GET'
+};
 /**
  *
- *  @description create a model of Order
+ * @description create a model of Order
  * @param {Order} order
- * @return {Order | undefined} 
+ * @return {Order | undefined}
  */
 const insertOrder = async (order: Order) => {
+    if (TRANSBANKURL === undefined) {
+        const response = "Ah ocurrido un error";
+        return response;
+    };
+    const request = http.request(httpOptions, (response) => {
+        let data = '';
+        console.log(httpOptions.PORT);
+        response.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        response.on('end', () => {
+            // Realiza cualquier operación necesaria con la respuesta del servidor
+            const response = 'Petición exitosa';
+            console.log(data);
+            return response;
+        });
+    });
+
+    request.on('error', (error) => {
+        const errorMsg = 'Error llamando a web pay'
+        console.error(error);
+        return errorMsg
+    });
+    request.end();
     const response = await OrderModel.create(order);
     return response;
 };
