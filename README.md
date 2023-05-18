@@ -7,7 +7,7 @@
 ## Install
 For dependency installation, use the following code.
 ```bash
-  npm install 
+  npm install
 ```
 ## Configuration
 You must **set** the environment variables that are displayed in the _.env.example_
@@ -29,11 +29,27 @@ npm run dev
 
 ## Endpoints
 
+### PRODUCTS
 - `GET` /api/v1/product
 - `GET` /api/v1/product/:id
 - `POST` /api/v1/product/:id
 - `PUT` /api/v1/product/:id
 - `DELETE` /api/v1/product/:id
+
+### ORDERS
+- `GET` /api/v1/order
+- `GET` /api/v1/order/:id
+- `POST` /api/v1/order/:id
+- `PUT` /api/v1/order/:id
+- `DELETE` /api/v1/order/:id
+
+### USERS
+- `POST` /api/v1/auth/register  -> **Register new user**
+- `POST` /api/v1/auth/login     -> **Login user**
+- `POST` /api/v1/user/          -> **Get all users**
+
+
+
 
 ## CREATOR
 

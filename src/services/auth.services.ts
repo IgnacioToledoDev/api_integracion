@@ -17,7 +17,7 @@ const registerNewUser = async ({ email, password, username }: User) => {
 
 const loginUser = async ({ email, password }: Auth) => {
     const checkIs = await UserModel.findOne({ email });
-    if (!checkIs) return 'Already_user';
+    if (!checkIs) return 'Null';
 
     const passwordHash = checkIs.password;
     const isCorrect = await verified(password, passwordHash);
@@ -31,7 +31,5 @@ const loginUser = async ({ email, password }: Auth) => {
     };
     return data;
 };
-
-
 
 export { registerNewUser, loginUser, };
