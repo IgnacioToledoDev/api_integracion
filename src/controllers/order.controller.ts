@@ -40,10 +40,7 @@ const getOrder = async ({ params }: Request, res: Response) => {
  */
 const postOrder = async ({ body }: Request, res: Response) => {
     try {
-        const { price, user, order } = body;
-        const payment = 'webpay';
-        const response = await insertOrder(body, user.email, payment, price, 1);
-        console.log('test ', body);
+        const response = await insertOrder(body);
         res.send(response);
     }
     catch (err) {
@@ -83,10 +80,11 @@ const deleteOrder = async ({ params }: Request, res: Response) => {
     };
 };
 
+
 export {
     getOrder,
     getOrders,
     postOrder,
     updateOrder,
     deleteOrder
-};
+}

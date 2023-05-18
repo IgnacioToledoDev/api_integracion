@@ -29,26 +29,12 @@ npm run dev
 
 ## Endpoints
 
-### Products
 - `GET` /api/v1/product
 - `GET` /api/v1/product/:id
-- `POST` /api/v1/product/
+- `POST` /api/v1/product/:id
 - `PUT` /api/v1/product/:id
 - `DELETE` /api/v1/product/:id
 
-### Orders
-- `GET` /api/v1/order
-- `GET` /api/v1/order/:id
-- `POST` /api/v1/order/
-- `PUT` /api/v1/order/:id
-- `DELETE` /api/v1/order/:id
-
-### Users
-- `POST` /api/v1/auth/register  **REGISTER USER**
-- `POST` /api/v1/auth/login     **LOGIN USER**
-- `GET`  /api/v1/users/         **GET ALL USERS**
-
-
 ## CREATOR
 
-** Ignacio Toledo **
+**Ignacio Toledo**

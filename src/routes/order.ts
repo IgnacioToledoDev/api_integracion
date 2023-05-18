@@ -10,9 +10,9 @@ import {
 
 const router = Router();
 
-router.post('/', postOrder)
+router.post('/', checkJwt, postOrder)
 
-router.get('/', getOrders)
+router.get('/', checkJwt, getOrders)
 
 router.get('/id', checkJwt, getOrder)
 

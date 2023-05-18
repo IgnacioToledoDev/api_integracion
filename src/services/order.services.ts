@@ -1,21 +1,14 @@
 import { Order } from './../types/order.types';
 import OrderModel from "../models/order.model";
-import mercadopago from "mercadopago"
-import { createPaymentMercadoPago, getAllPaymentMethodId } from './mercado_pago.services';
 
 /**
  *
- * @description create a model of Order
+ *  @description create a model of Order
  * @param {Order} order
  * @return {Order | undefined} 
  */
-const insertOrder = async (order: Order, email_user: string, payment: string, total_payment: number, installments: number) => {
-    const data = await OrderModel.create(order);
-    const createPayment = await createPaymentMercadoPago(email_user, payment, total_payment, installments, order.products);
-    const response = {
-        data,
-        createPayment
-    }
+const insertOrder = async (order: Order) => {
+    const response = await OrderModel.create(order);
     return response;
 };
 
@@ -25,7 +18,6 @@ const insertOrder = async (order: Order, email_user: string, payment: string, to
  */
 const getAllOrders = async () => {
     const response = await OrderModel.find();
-    const methods = await getAllPaymentMethodId();
     return response;
 };
 
