@@ -2,13 +2,17 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+// import mercadopago from "mercadopago";
 
 /**MODULES IMPORTS*/
 import { router } from './routes/index';
 import db from './config/database'
+// import { mercadoPagoAccessToken } from './config/mercadopago';
 
 /**GLOBALS CONFIGS */
 const app = express();
+
+// mercadopago.configurations.setAccessToken(mercadoPagoAccessToken);
 
 dotenv.config();
 const PORT = process.env.PORT || 4200;
