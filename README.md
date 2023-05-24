@@ -3,6 +3,7 @@
 ## Requirements
 - Node.js 18+
 - NPM
+- Mongo local
 
 ## Install
 For dependency installation, use the following code.
