@@ -1,0 +1,1 @@
+exports.sessionId = sessionId = "S-" + Math.floor(Math.random() * 10000) + 1;

@@ -1,17 +1,15 @@
 import { Order } from './../types/order.types';
 import OrderModel from "../models/order.model";
 import dotenv from 'dotenv'
-import http from 'http';
+import { Request, Response, Router, response } from "express";
+import axios from 'axios';
+
+const router = Router();
+
 dotenv.config();
 
-const TRANSBANKURL = process.env.TRANSBANK_URL || undefined;
-
-const httpOptions = {
-    hostname: 'localhost',
-    PORT: 4500,
-    path: '/test',
-    method: 'GET'
-};
+const TRANSBANKURL = 'http://localhost:4500/transbank/test';
+// const TRANSBANKURL = process.env.TRANSBANK_URL || undefined;
 /**
  *
  * @description create a model of Order
@@ -19,34 +17,15 @@ const httpOptions = {
  * @return {Order | undefined}
  */
 const insertOrder = async (order: Order) => {
-    if (TRANSBANKURL === undefined) {
-        const response = "Ah ocurrido un error";
-        return response;
-    };
-    const request = http.request(httpOptions, (response) => {
-        let data = '';
-        console.log(httpOptions.PORT);
-        response.on('data', (chunk) => {
-            data += chunk;
-        });
+    const amount = order.price
+    await getTransbank(amount);
+    // const Order = await OrderModel.create(order);
+    // const response = {
+    //     Order, transbank
+    // };
+    // return message;
 
-        response.on('end', () => {
-            // Realiza cualquier operación necesaria con la respuesta del servidor
-            const response = 'Petición exitosa';
-            console.log(data);
-            return response;
-        });
-    });
-
-    request.on('error', (error) => {
-        const errorMsg = 'Error llamando a web pay'
-        console.error(error);
-        return errorMsg
-    });
-    request.end();
-    const response = await OrderModel.create(order);
-    return response;
-};
+}
 
 /**
  * @description get all Orders
@@ -87,6 +66,20 @@ const updateOrderByID = async (id: string, order: Order) => {
 const deleteOrderByID = async (id: string) => {
     const response = await OrderModel.findOneAndDelete({ _id: id });
     return response;
+};
+
+const getTransbank = async (amount: number) => {
+    if (TRANSBANKURL === undefined) {
+        const response = "Ah ocurrido un error al intentar acceder a un servicio";
+        return response;
+    }
+
+    axios.post(TRANSBANKURL, `${amount}`).then(res => {
+        console.log(res);
+    })
+    .catch(err => {
+        console.error(err);
+    })
 };
 
 export {
