@@ -121,7 +121,7 @@ In the dir `transbank` you need to start the develpment server, using the follow
 ```json
   {
     "order": "Order",
-    "session" = "data",
+    "session": "data",
     "amount": 1500
   }
 ```
