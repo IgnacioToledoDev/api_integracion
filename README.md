@@ -27,6 +27,13 @@ Start the development server. The default port is 4200 but you can change the po
 npm run dev
 ```
 
+### Transbank server
+In the dir `transbank` you need to start the develpment server, using the following code:
+
+```bash
+  npm run dev
+```
+
 ## Endpoints
 
 ### PRODUCTS
@@ -48,7 +55,54 @@ npm run dev
 - `POST` /api/v1/auth/login     -> **Login user**
 - `POST` /api/v1/user/          -> **Get all users**
 
+## MOCKS
 
+### REGISTER USER
+
+```json
+  {
+    "username": "test",
+    "email": "test@test.com",
+    "password": "test"
+  }
+```
+### LOGIN USER
+
+```json
+  {
+    "email": "test@test.com",
+    "password": "test"
+  }
+```
+
+### CREATE PRODUCT
+
+```json
+  {
+    "name": "product",
+    "description": "This is a product",
+    "category": "CategoryA",
+    "price": 15000,
+    "stock": 1500
+  }
+```
+### CREATE ORDER
+
+```json
+  {
+    "user": {
+      "username": "test",
+      "email": "test@test.com"
+    },
+    "products": [{
+       "name": "product",
+      "description": "This is a product",
+      "category": "CategoryA",
+      "price": 15000,
+    }],
+    price: 1500
+  }
+```
 
 
 ## CREATOR
