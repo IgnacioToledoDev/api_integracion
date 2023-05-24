@@ -3,6 +3,7 @@
 ## Requirements
 - Node.js 18+
 - NPM
+- Mongo local
 
 ## Install
 For dependency installation, use the following code.
@@ -27,6 +28,13 @@ Start the development server. The default port is 4200 but you can change the po
 npm run dev
 ```
 
+### Transbank server
+In the dir `transbank` you need to start the develpment server, using the following code:
+
+```bash
+  npm run dev
+```
+
 ## Endpoints
 
 ### PRODUCTS
@@ -46,10 +54,64 @@ npm run dev
 ### USERS
 - `POST` /api/v1/auth/register  -> **Register new user**
 - `POST` /api/v1/auth/login     -> **Login user**
-- `POST` /api/v1/user/          -> **Get all users**
+- `GET` /api/v1/user/          -> **Get all users**
 
+## MOCKS
 
+### REGISTER USER `POST` /api/v1/auth/register
 
+```json
+  {
+    "username": "test",
+    "email": "test@test.com",
+    "password": "test"
+  }
+```
+### LOGIN USER `POST` /api/v1/auth/login
+
+```json
+  {
+    "email": "test@test.com",
+    "password": "test"
+  }
+```
+
+### CREATE PRODUCT `POST` /api/v1/products/
+
+```json
+  {
+    "name": "product",
+    "description": "This is a product",
+    "category": "CategoryA",
+    "price": 15000,
+    "stock": 1500
+  }
+```
+### CREATE ORDER `POST` /api/v1/order/
+
+```json
+  {
+    "user": {
+      "username": "test",
+      "email": "test@test.com"
+    },
+    "products": [{
+       "name": "product",
+      "description": "This is a product",
+      "category": "CategoryA",
+      "price": 15000,
+    }],
+    "price": 1500
+  }
+```
+
+### CREATE TRANSACTION
+
+```json
+  {
+    "amount": 1500 
+  }
+```
 
 ## CREATOR
 
