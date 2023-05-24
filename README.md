@@ -120,7 +120,9 @@ In the dir `transbank` you need to start the develpment server, using the follow
 
 ```json
   {
-    "amount": 1500 
+    "order": "Order",
+    "session" = "data",
+    "amount": 1500
   }
 ```
 *Response* = `Token` and `Url`,
