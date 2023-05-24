@@ -100,10 +100,17 @@ In the dir `transbank` you need to start the develpment server, using the follow
       "category": "CategoryA",
       "price": 15000,
     }],
-    price: 1500
+    "price": 1500
   }
 ```
 
+### CREATE TRANSACTION
+
+```json
+  {
+    "amount": 1500 
+  }
+```
 
 ## CREATOR
 
