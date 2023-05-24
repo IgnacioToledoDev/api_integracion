@@ -53,11 +53,11 @@ In the dir `transbank` you need to start the develpment server, using the follow
 ### USERS
 - `POST` /api/v1/auth/register  -> **Register new user**
 - `POST` /api/v1/auth/login     -> **Login user**
-- `POST` /api/v1/user/          -> **Get all users**
+- `GET` /api/v1/user/          -> **Get all users**
 
 ## MOCKS
 
-### REGISTER USER
+### REGISTER USER `POST` /api/v1/auth/register
 
 ```json
   {
@@ -66,7 +66,7 @@ In the dir `transbank` you need to start the develpment server, using the follow
     "password": "test"
   }
 ```
-### LOGIN USER
+### LOGIN USER `POST` /api/v1/auth/login
 
 ```json
   {
@@ -75,7 +75,7 @@ In the dir `transbank` you need to start the develpment server, using the follow
   }
 ```
 
-### CREATE PRODUCT
+### CREATE PRODUCT `POST` /api/v1/products/
 
 ```json
   {
@@ -86,7 +86,7 @@ In the dir `transbank` you need to start the develpment server, using the follow
     "stock": 1500
   }
 ```
-### CREATE ORDER
+### CREATE ORDER `POST` /api/v1/order/
 
 ```json
   {
