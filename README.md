@@ -67,6 +67,9 @@ In the dir `transbank` you need to start the develpment server, using the follow
     "password": "test"
   }
 ```
+*Response* = `Usuario creado`
+*Status* = `200`
+
 ### LOGIN USER `POST` /api/v1/auth/login
 
 ```json
@@ -75,6 +78,9 @@ In the dir `transbank` you need to start the develpment server, using the follow
     "password": "test"
   }
 ```
+
+*Response* = `Token` and `Data User`,
+*status* = `200`
 
 ### CREATE PRODUCT `POST` /api/v1/products/
 
@@ -87,6 +93,9 @@ In the dir `transbank` you need to start the develpment server, using the follow
     "stock": 1500
   }
 ```
+*Response* = `Product`,
+*status* = `200`
+
 ### CREATE ORDER `POST` /api/v1/order/
 
 ```json
@@ -104,6 +113,8 @@ In the dir `transbank` you need to start the develpment server, using the follow
     "price": 1500
   }
 ```
+*Response* = `Data Order`,
+*status* = `200`
 
 ### CREATE TRANSACTION
 
@@ -112,6 +123,8 @@ In the dir `transbank` you need to start the develpment server, using the follow
     "amount": 1500 
   }
 ```
+*Response* = `Token` and `Url`,
+*status* = `200`
 
 ## CREATOR
 
